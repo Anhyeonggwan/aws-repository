@@ -33,6 +33,6 @@ jobs:
             rm -rf src/main/resoruces/application.properties
             git pull origin main
             echo "$APPLICATION_PROPERTIES" > src/main/resources/application.properties
-            ./gradlew build -x test
+            ./gradlew clean build 
             sudo fuser -k -n tcp 8080 || true
             nohup java -jar build/libs/*SNAPSHOT.jar > ./output.log 2>&1 &
