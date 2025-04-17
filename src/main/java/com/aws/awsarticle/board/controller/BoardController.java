@@ -9,12 +9,13 @@ import com.aws.awsarticle.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class BoardController {
 
@@ -28,17 +29,17 @@ public class BoardController {
     }
     
 
-    @PostMapping("/upload")
-    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile multipartFile) {
+    // @PostMapping("/upload")
+    // public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile multipartFile) {
 
-        try {
-            String imageUrl = boardService.uploadFile(multipartFile);
-            return ResponseEntity.ok("File uploaded successfully! imageUrl: " + imageUrl);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.ok("File upload failed!");
-        }
-    }
+    //     try {
+    //         String imageUrl = boardService.uploadFile(multipartFile);
+    //         return ResponseEntity.ok("File uploaded successfully! imageUrl: " + imageUrl);
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //         return ResponseEntity.ok("File upload failed!");
+    //     }
+    // }
     
 
 }
