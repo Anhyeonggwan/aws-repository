@@ -22,7 +22,7 @@ public class BoardController {
 
     @GetMapping("/")
     public ResponseEntity<String> home() {
-        return ResponseEntity.ok("Hi World");
+        return ResponseEntity.ok("Hi World check");
     }
     
 
