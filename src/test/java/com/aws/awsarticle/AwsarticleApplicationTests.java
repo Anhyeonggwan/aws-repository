@@ -8,6 +8,7 @@ class AwsarticleApplicationTests {
 
 	@Test
 	void contextLoads() {
+		throw new RuntimeException("fail");
 	}
 
 }
